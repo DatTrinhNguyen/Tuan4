@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Tuan2.Models.Category>
+<h2>Category</h2>
+<a asp-action="Add" class="btn btn-primary">Thêm Thể Loại</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var category in Model)
+        {
+            <tr>
+                <td>@category.Id</td>
+                <td>@category.Name</td>
+                <td>
+                    <a asp-action="Display" asp-route-id="@category.Id">View</a> |
+                    <a asp-action="Update" asp-route-id="@category.Id">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@category.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
